@@ -1,0 +1,52 @@
+# [AI Generated] Data: 19/06/2024
+# Descrição: Arquivo .gitignore para projeto Python CrewAI, incluindo venv, configs, IDEs e arquivos temporários
+# Gerado por: Cursor AI
+# Versão: Python 3.12, crewai 0.75.0, crewai_tools 0.17.0
+# AI_GENERATED_CODE_START
+
+# Ambiente virtual Python
+venv/
+
+# Arquivos de configuração de ambiente
+.env
+*.env
+
+# Ignorar toda a pasta de configurações
+config/
+
+# Arquivos de cache e temporários
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+*.db
+*.tmp
+*.bak
+*.swp
+.DS_Store
+
+# Configurações de IDEs
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Dados de execução e relatórios
+*.out
+*.report
+*.ipynb_checkpoints/
+
+# Arquivos de exportação e resultados
+*.csv
+*.xlsx
+*.xls
+*.parquet
+*.feather
+*.jsonl
+
+# Arquivos de backup
+*~
+
+# AI_GENERATED_CODE_END 
