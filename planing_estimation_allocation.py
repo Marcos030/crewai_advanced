@@ -1,7 +1,7 @@
 # [AI Generated] Data: 19/06/2024
-# Descrição: Correção do tratamento do resultado do crew para evitar erro de atributo e garantir exibição robusta
+# Descrição: Substituição de .dict() por .model_dump() para compatibilidade Pydantic v2+
 # Gerado por: Cursor AI
-# Versão: Python 3.12, crewai 0.141.0, crewai_tools 0.51.1
+# Versão: Python 3.12, crewai 0.141.0, pydantic 2.x
 # AI_GENERATED_CODE_START
 
 import warnings
@@ -73,15 +73,16 @@ costs = 0.150 * (crew.usage_metrics.prompt_tokens + crew.usage_metrics.completio
 print(f"Custos Totais: R${costs:.4f}")
 
 # Exibir métricas de uso
-df_usage_metrics = pd.DataFrame([crew.usage_metrics.dict()])
+# Substituir .dict() por .model_dump()
+df_usage_metrics = pd.DataFrame([crew.usage_metrics.model_dump()])
 print("\nMétricas de uso:")
 print(df_usage_metrics)
 
 # Exibir resultados estruturados
 if result is not None:
     # Se for objeto com .pydantic
-    if hasattr(result, 'pydantic') and hasattr(result.pydantic, 'dict'):
-        result_dict = result.pydantic.dict()
+    if hasattr(result, 'pydantic') and hasattr(result.pydantic, 'model_dump'):
+        result_dict = result.pydantic.model_dump()
     # Se for dicionário
     elif isinstance(result, dict):
         result_dict = result

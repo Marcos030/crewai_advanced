@@ -43,7 +43,8 @@ costs = 0.150 * (crew.usage_metrics.prompt_tokens + crew.usage_metrics.completio
 print(f"Custos Totais: R${costs:.4f}")
 
 # Exibir métricas de uso
-df_usage_metrics = pd.DataFrame([crew.usage_metrics.dict()])
+# Substituir .dict() por .model_dump()
+df_usage_metrics = pd.DataFrame([crew.usage_metrics.model_dump()])
 print("\nMétricas de uso:")
 print(df_usage_metrics)
 
