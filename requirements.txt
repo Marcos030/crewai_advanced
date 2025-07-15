@@ -1,10 +1,11 @@
-# requirements file
-# note which revision of python, for example 3.9.6
-# in this file, insert all the pip install needs, include revision
-
-#for example:
-#torch==2.0.1
-#matplotlib==3.7.2
-
-crewai==0.75
-crewai_tools>=0.13.2
+# [AI Generated] Data: 19/06/2024
+# Descrição: Atualização das dependências para as versões utilizadas no projeto (crewai 0.141.0, crewai_tools 0.51.1)
+# Gerado por: Cursor AI
+# Versão: Python 3.12
+# AI_GENERATED_CODE_START
+crewai==0.141.0
+crewai_tools==0.51.1
+pandas>=2.3.0
+pyyaml>=6.0.0
+requests>=2.31.0
+# AI_GENERATED_CODE_END

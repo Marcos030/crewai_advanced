@@ -1,7 +1,7 @@
 # [AI Generated] Data: 19/06/2024
-# Descrição: Script principal para planejamento, estimativa e alocação de recursos, usando módulos utilitários
+# Descrição: Correção do tratamento do resultado do crew para evitar erro de atributo e garantir exibição robusta
 # Gerado por: Cursor AI
-# Versão: Python 3.12, crewai 0.75
+# Versão: Python 3.12, crewai 0.141.0, crewai_tools 0.51.1
 # AI_GENERATED_CODE_START
 
 import warnings
@@ -78,14 +78,28 @@ print("\nMétricas de uso:")
 print(df_usage_metrics)
 
 # Exibir resultados estruturados
-if hasattr(result, 'pydantic'):
-    result_dict = result.pydantic.dict()
-    if 'tasks' in result_dict:
-        print("\nTarefas estimadas:")
-        df_tasks = pd.DataFrame(result_dict['tasks'])
-        print(df_tasks.to_string(index=False))
-    if 'milestones' in result_dict:
-        print("\nMarcos do projeto:")
-        df_milestones = pd.DataFrame(result_dict['milestones'])
-        print(df_milestones.to_string(index=False))
+if result is not None:
+    # Se for objeto com .pydantic
+    if hasattr(result, 'pydantic') and hasattr(result.pydantic, 'dict'):
+        result_dict = result.pydantic.dict()
+    # Se for dicionário
+    elif isinstance(result, dict):
+        result_dict = result
+    # Se for string ou outro tipo, apenas exibe
+    else:
+        print("\nResultado bruto:")
+        print(result)
+        result_dict = None
+
+    if result_dict:
+        if 'tasks' in result_dict:
+            print("\nTarefas estimadas:")
+            df_tasks = pd.DataFrame(result_dict['tasks'])
+            print(df_tasks.to_string(index=False))
+        if 'milestones' in result_dict:
+            print("\nMarcos do projeto:")
+            df_milestones = pd.DataFrame(result_dict['milestones'])
+            print(df_milestones.to_string(index=False))
+else:
+    print("\nNenhum resultado retornado pelo Crew.")
 # AI_GENERATED_CODE_END

@@ -1,27 +1,31 @@
 # [AI Generated] Data: 19/06/2024
-# Descrição: Ferramentas para integração com Trello para uso com CrewAI
+# Descrição: Refatoração das ferramentas Trello para o padrão BaseTool moderno (crewai 0.141.0, crewai_tools 0.51.1)
 # Gerado por: Cursor AI
-# Versão: Python 3.12, crewai_tools 0.17.0
+# Versão: Python 3.12, crewai 0.141.0, crewai_tools 0.51.1
 # AI_GENERATED_CODE_START
 
-from crewai_tools import BaseTool
+from crewai.tools import BaseTool
+from pydantic import BaseModel, Field
 import os
 import requests
 import json
 
+class BoardDataFetcherInput(BaseModel):
+    pass  # Sem argumentos obrigatórios
+
 class BoardDataFetcherTool(BaseTool):
     name: str = "Trello Board Data Fetcher"
     description: str = "Busca dados de cartões, comentários e atividades de um board do Trello."
+    args_schema: type = BoardDataFetcherInput
 
-    api_key: str = os.environ['TRELLO_API_KEY']
-    api_token: str = os.environ['TRELLO_API_TOKEN']
-    board_id: str = os.environ['TRELLO_BOARD_ID']
-
-    def _run(self) -> dict:
-        url = f"{os.getenv('DLAI_TRELLO_BASE_URL', 'https://api.trello.com')}/1/boards/{self.board_id}/cards"
+    def _run(self):
+        api_key = os.environ['TRELLO_API_KEY']
+        api_token = os.environ['TRELLO_API_TOKEN']
+        board_id = os.environ['TRELLO_BOARD_ID']
+        url = f"{os.getenv('DLAI_TRELLO_BASE_URL', 'https://api.trello.com')}/1/boards/{board_id}/cards"
         query = {
-            'key': self.api_key,
-            'token': self.api_token,
+            'key': api_key,
+            'token': api_token,
             'fields': 'name,idList,due,dateLastActivity,labels',
             'attachments': 'true',
             'actions': 'commentCard'
@@ -30,25 +34,27 @@ class BoardDataFetcherTool(BaseTool):
         if response.status_code == 200:
             return response.json()
         else:
-            # Fallback em caso de erro
-            return json.dumps([])
+            return []
+
+class CardDataFetcherInput(BaseModel):
+    card_id: str = Field(..., description="ID do cartão do Trello.")
 
 class CardDataFetcherTool(BaseTool):
     name: str = "Trello Card Data Fetcher"
     description: str = "Busca dados de um cartão do Trello."
+    args_schema: type = CardDataFetcherInput
 
-    api_key: str = os.environ['TRELLO_API_KEY']
-    api_token: str = os.environ['TRELLO_API_TOKEN']
-
-    def _run(self, card_id: str) -> dict:
+    def _run(self, card_id: str):
+        api_key = os.environ['TRELLO_API_KEY']
+        api_token = os.environ['TRELLO_API_TOKEN']
         url = f"{os.getenv('DLAI_TRELLO_BASE_URL', 'https://api.trello.com')}/1/cards/{card_id}"
         query = {
-            'key': self.api_key,
-            'token': self.api_token
+            'key': api_key,
+            'token': api_token
         }
         response = requests.get(url, params=query)
         if response.status_code == 200:
             return response.json()
         else:
-            return json.dumps({"error": "Falha ao buscar dados do cartão"})
+            return {"error": "Falha ao buscar dados do cartão"}
 # AI_GENERATED_CODE_END 
