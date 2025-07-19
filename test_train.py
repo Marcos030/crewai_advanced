@@ -13,7 +13,7 @@ load_env()
 
 import os
 from config_loader import load_configs
-from agents_factory import create_agents, create_tasks
+from agents_factory import create_test_train_agents, create_test_train_tasks
 from crewai_tools import FileReadTool
 from crewai import Crew
 
@@ -30,9 +30,9 @@ configs = load_configs('config/test_train')
 csv_tool = FileReadTool(file_path='./files/support_tickets_data.csv')
 tools = [csv_tool]
 
-# Criar agentes e tarefas
-agents = create_agents(configs['agents'], tools=tools)
-tasks = create_tasks(configs['tasks'], agents)
+# Criar agentes e tarefas específicos para test_train
+agents = create_test_train_agents(configs['agents'], tools=tools)
+tasks = create_test_train_tasks(configs['tasks'], agents)
 
 # Preparar inputs para as tarefas
 inputs = {
@@ -53,8 +53,12 @@ print(f"📁 Diretório de saída: {output_dir}")
 print("🇧🇷 Todas as saídas serão em português brasileiro")
 print("-" * 50)
 
-crew.test(n_iterations=1, eval_llm='gpt-4o', inputs=inputs)
+##crew.test(n_iterations=1, eval_llm='gpt-4o', inputs=inputs)
+##results = crew.kickoff(inputs=inputs)
+# Usar kickoff() em vez de test() para permitir execução real de código
+results = crew.kickoff(inputs=inputs)
 
 print("-" * 50)
 print("✅ Teste concluído!")
 print(f"📊 Gráficos salvos em: {output_dir}")
+print(f"📄 Resultado: {results}")

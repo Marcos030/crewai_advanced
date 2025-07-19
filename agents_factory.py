@@ -90,4 +90,53 @@ def create_email_tasks(configs, agents):
             agent=agents['engagement_strategist']
         )
     }
+# --- Funções específicas para test_train ---
+def create_test_train_agents(configs, tools=None):
+    """
+    Cria agentes específicos para o pipeline test_train.
+    Inclui allow_code_execution=True para o agente de gráficos.
+    """
+    return {
+        'suggestion_generation_agent': Agent(
+            config=configs['suggestion_generation_agent'],
+            tools=tools or []
+        ),
+        'reporting_agent': Agent(
+            config=configs['reporting_agent'],
+            tools=tools or []
+        ),
+        'chart_generation_agent': Agent(
+            config=configs['chart_generation_agent'],
+            allow_code_execution=True
+        )
+    }
+
+def create_test_train_tasks(configs, agents):
+    """
+    Cria tarefas específicas para o pipeline test_train.
+    Inclui context para definir dependências entre tarefas.
+    """
+    suggestion_generation = Task(
+        config=configs['suggestion_generation'],
+        agent=agents['suggestion_generation_agent']
+    )
+    
+    table_generation = Task(
+        config=configs['table_generation'],
+        agent=agents['reporting_agent']
+    )
+    
+    chart_generation = Task(
+        config=configs['chart_generation'],
+        agent=agents['chart_generation_agent']
+    )
+    
+    final_report_assembly = Task(
+        config=configs['final_report_assembly'],
+        agent=agents['reporting_agent'],
+        context=[suggestion_generation, table_generation, chart_generation]
+    )
+    
+    return [suggestion_generation, table_generation, chart_generation, final_report_assembly]
+
 # AI_GENERATED_CODE_END 
