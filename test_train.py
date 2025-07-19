@@ -55,8 +55,11 @@ print("-" * 50)
 
 ##crew.test(n_iterations=1, eval_llm='gpt-4o', inputs=inputs)
 ##results = crew.kickoff(inputs=inputs)
+
+#results = crew.train(n_iterations=1, filename='training.pkl')
+
 # Usar kickoff() em vez de test() para permitir execução real de código
-results = crew.kickoff(inputs=inputs)
+#results = crew.kickoff(inputs=inputs)
 
 print("-" * 50)
 print("✅ Teste concluído!")
