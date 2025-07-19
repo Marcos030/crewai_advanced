@@ -1,0 +1,72 @@
+# [AI Generated] Data: 19/06/2024
+# Descrição: Configuração das tarefas para criação de conteúdo financeiro
+# Gerado por: Cursor AI
+# Versão: Python 3.12, crewai 0.141.0
+# AI_GENERATED_CODE_START
+
+monitor_financial_news:
+  description: >
+    Monitorar e coletar as notícias financeiras mais recentes sobre inflação
+    nos EUA e seu impacto no mercado de ações em 2024. Foque em:
+    - Dados de inflação recentes (CPI, PCE)
+    - Comentários do Federal Reserve
+    - Reações do mercado de ações
+    - Análises de especialistas
+    - Tendências econômicas relacionadas
+    
+    Forneça um resumo estruturado das informações mais relevantes
+    encontradas, incluindo fontes e datas.
+  expected_output: >
+    Um relatório estruturado com as notícias financeiras mais relevantes
+    sobre inflação nos EUA e seu impacto no mercado de ações, incluindo
+    fontes, datas e análises preliminares.
+
+analyze_market_data:
+  description: >
+    Analisar dados de mercado e indicadores econômicos relacionados à
+    inflação nos EUA e seu impacto no mercado de ações. Inclua:
+    - Análise de dados históricos de inflação
+    - Correlação entre inflação e performance do mercado
+    - Indicadores técnicos relevantes
+    - Projeções e tendências
+    - Comparações com períodos históricos similares
+    
+    Use dados quantitativos e análises estatísticas quando possível.
+  expected_output: >
+    Uma análise quantitativa detalhada dos dados de mercado relacionados
+    à inflação, incluindo gráficos, estatísticas e insights baseados
+    em dados.
+
+create_content:
+  description: >
+    Criar conteúdo envolvente baseado nas análises de notícias e dados
+    fornecidos. O conteúdo deve incluir:
+    - Um artigo principal em markdown (800-1200 palavras)
+    - Posts para diferentes redes sociais (Twitter, LinkedIn, Instagram)
+    - Hashtags relevantes e menções apropriadas
+    - Títulos e subtítulos atrativos
+    - Conclusões acionáveis
+    
+    O conteúdo deve ser informativo, envolvente e adequado para
+    diferentes audiências.
+  expected_output: >
+    Conteúdo completo incluindo artigo principal em markdown e posts
+    para redes sociais, todos baseados nas análises fornecidas.
+
+quality_assurance:
+  description: >
+    Revisar e validar todo o conteúdo criado, garantindo:
+    - Precisão factual das informações
+    - Qualidade da escrita e gramática
+    - Adequação para o público-alvo
+    - Consistência com as análises fornecidas
+    - Formatação correta em markdown
+    - Apropriação dos posts para redes sociais
+    
+    Faça correções necessárias e forneça feedback construtivo.
+  expected_output: >
+    Conteúdo revisado e validado, incluindo artigo final em markdown
+    e posts para redes sociais, todos com qualidade garantida e
+    formatação adequada.
+
+# AI_GENERATED_CODE_END 

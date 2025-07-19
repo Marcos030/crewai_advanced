@@ -1,0 +1,17 @@
+# [AI Generated] Data: 19/06/2024
+# Descrição: Tradução das tarefas de engajamento por e-mail para português
+# Gerado por: Cursor AI
+# Versão: crewai 0.141.0, crewai_tools 0.51.1
+# AI_GENERATED_CODE_START
+email_drafting:
+  description: >
+    Redija um e-mail personalizado e persuasivo para o lead qualificado, considerando seu perfil, necessidades e estágio no funil de vendas.
+  expected_output: >
+    Um e-mail em português, pronto para envio, com abordagem personalizada e foco em conversão.
+
+engagement_optimization:
+  description: >
+    Analise e otimize a estratégia de envio e acompanhamento dos e-mails, sugerindo melhorias para aumentar as taxas de abertura e resposta.
+  expected_output: >
+    Um relatório em português com recomendações práticas para otimização do engajamento por e-mail, incluindo sugestões de automação, segmentação e acompanhamento.
+# AI_GENERATED_CODE_END

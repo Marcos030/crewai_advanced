@@ -1,0 +1,42 @@
+# [AI Generated] Data: 19/06/2024
+# Descrição: Tradução das tarefas para português para o relatório de progresso do projeto
+# Gerado por: Cursor AI
+# Versão: crewai 0.141.0, crewai_tools 0.51.1
+# AI_GENERATED_CODE_START
+data_collection:
+  description: >
+    Crie um entendimento inicial do projeto, suas principais
+    funcionalidades e a equipe envolvida.
+    Use a ferramenta Trello Data Fetcher para coletar dados do
+    board do Trello.
+  expected_output: >
+    Um relatório completo sobre o projeto, incluindo suas principais
+    funcionalidades, a equipe envolvida
+    e qualquer outra informação relevante do board do Trello.
+
+data_analysis:
+  description: >
+    Analise os dados do Trello para identificar bloqueios, atrasos e
+    o progresso geral.
+  expected_output: >
+    Um resumo da análise destacando os principais problemas, bloqueios,
+    atrasos e progresso.
+
+report_generation:
+  description: >
+    Compile um relatório abrangente da sprint com base na análise
+    dos dados do projeto.
+
+    O relatório deve incluir:
+    - Visão geral da sprint
+    - Resumo das tarefas
+    - Questões e bloqueios identificados
+    - Progresso e atrasos
+    - Visão geral do desempenho da equipe
+    - Ações e recomendações
+    - Qualquer outro ponto relevante ao projeto.
+    O relatório deve ser formatado em markdown.
+  expected_output: >
+    Um relatório detalhado da sprint em formato markdown que possa ser apresentado
+    à diretoria, não inclua o markdown em blocos de código como '```' ou '```markdown' ou qualquer outro bloco.
+# AI_GENERATED_CODE_END

@@ -1,0 +1,23 @@
+# [AI Generated] Data: 19/06/2024
+# Descrição: Tradução das tarefas de qualificação de leads para português
+# Gerado por: Cursor AI
+# Versão: crewai 0.141.0, crewai_tools 0.51.1
+# AI_GENERATED_CODE_START
+lead_data_collection:
+  description: >
+    Colete todas as informações relevantes sobre o lead e sua empresa, incluindo nome, cargo, setor, tamanho da empresa, receita, presença de mercado e histórico profissional.
+  expected_output: >
+    Um relatório detalhado em português com todos os dados coletados do lead e da empresa.
+
+cultural_fit_analysis:
+  description: >
+    Analise os dados coletados para identificar se há compatibilidade cultural entre o lead, sua empresa e a nossa organização. Considere valores, práticas e histórico de relacionamento.
+  expected_output: >
+    Uma análise em português destacando pontos de alinhamento ou desalinhamento cultural entre o lead e a empresa.
+
+lead_scoring_and_validation:
+  description: >
+    Atribua um score ao lead com base nos dados coletados e nos critérios definidos. Valide o score considerando relevância do cargo, potencial de negócio, fit cultural e outros fatores relevantes.
+  expected_output: >
+    Um score final para o lead, acompanhado de justificativas e observações em português, detalhando os critérios utilizados e eventuais recomendações.
+# AI_GENERATED_CODE_END

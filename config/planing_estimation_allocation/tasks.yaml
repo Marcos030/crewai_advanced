@@ -1,0 +1,54 @@
+# [AI Generated] Data: 19/06/2024
+# Descrição: Configuração das tarefas traduzida para português brasileiro
+# Gerado por: Cursor AI
+# Versão: Python 3.12, crewai 0.75
+# AI_GENERATED_CODE_START 
+
+task_breakdown:
+  description: >
+    Analise cuidadosamente os requisitos do projeto para o projeto {project_type}
+    e divida-os em tarefas individuais. Defina o escopo de cada
+    tarefa em detalhes, estabeleça cronogramas realizáveis e garanta que
+    todas as dependências sejam consideradas:
+
+    {project_requirements}
+
+
+    Membros da equipe:
+
+    {team_members}
+  expected_output: >
+    Uma lista abrangente de tarefas com descrições detalhadas, cronogramas,
+    dependências e entregáveis. Sua saída final DEVE incluir um
+    gráfico de Gantt ou visualização de cronograma similar específica para o
+    projeto {project_type}.
+
+time_resource_estimation:
+  description: >
+    Avalie minuciosamente cada tarefa no projeto {project_type} para
+    estimar o tempo, recursos e esforço necessários.
+    Use dados históricos, complexidade da tarefa e recursos disponíveis para
+    fornecer uma estimativa realista para cada tarefa.
+  expected_output: >
+    Um relatório detalhado de estimativas descrevendo o tempo, recursos e
+    esforço necessários para cada tarefa no projeto {project_type}.
+    Seu relatório final DEVE incluir um resumo de quaisquer riscos ou
+    incertezas associadas às estimativas.
+
+resource_allocation:
+  description: >
+    Aloque estrategicamente as tarefas para o projeto {project_type} aos
+    membros da equipe com base em suas habilidades, disponibilidade e carga de trabalho
+    atual. Garanta que cada tarefa seja designada ao membro da equipe mais adequado
+    e que a carga de trabalho seja distribuída uniformemente.
+
+
+    Membros da equipe:
+
+    {team_members}
+  expected_output: >
+    Um gráfico de alocação de recursos mostrando quais membros da equipe são
+    responsáveis por cada tarefa no projeto {project_type}, junto com
+    datas de início e fim. Sua saída final DEVE também incluir um resumo
+    explicando a lógica por trás de cada decisão de alocação.
+# AI_GENERATED_CODE_END

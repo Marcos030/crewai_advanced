@@ -96,7 +96,6 @@ Thumbs.db
 *.jsonl
 *.json
 *.xml
-*.yaml
 *.yml
 
 # Arquivos de imagem e mídia gerados
