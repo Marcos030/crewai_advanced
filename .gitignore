@@ -117,8 +117,6 @@ Thumbs.db
 *.model
 
 # Arquivos de configuração local
-config.local.yaml
-config.local.yml
 settings.local.py
 
 # Arquivos de backup e versionamento
