@@ -90,6 +90,60 @@ def create_email_tasks(configs, agents):
             agent=agents['engagement_strategist']
         )
     }
+
+# --- Funções específicas para content_creator ---
+def create_content_creator_agents(configs, tools=None):
+    """
+    Cria agentes específicos para o pipeline content_creator.
+    """
+    return {
+        'market_news_monitor_agent': Agent(
+            config=configs['market_news_monitor_agent'],
+            tools=tools or [],
+            llm="groq/llama-3.3-70b-versatile"
+        ),
+        'data_analyst_agent': Agent(
+            config=configs['data_analyst_agent'],
+            tools=tools or [],
+            llm="groq/llama-3.3-70b-versatile"
+        ),
+        'content_creator_agent': Agent(
+            config=configs['content_creator_agent'],
+            tools=tools or []
+        ),
+        'quality_assurance_agent': Agent(
+            config=configs['quality_assurance_agent']
+        )
+    }
+
+def create_content_creator_tasks(configs, agents):
+    """
+    Cria tarefas específicas para o pipeline content_creator.
+    """
+    monitor_financial_news = Task(
+        config=configs['monitor_financial_news'],
+        agent=agents['market_news_monitor_agent']
+    )
+    
+    analyze_market_data = Task(
+        config=configs['analyze_market_data'],
+        agent=agents['data_analyst_agent']
+    )
+    
+    create_content = Task(
+        config=configs['create_content'],
+        agent=agents['content_creator_agent'],
+        context=[monitor_financial_news, analyze_market_data]
+    )
+    
+    quality_assurance = Task(
+        config=configs['quality_assurance'],
+        agent=agents['quality_assurance_agent'],
+        context=[monitor_financial_news, analyze_market_data, create_content]
+    )
+    
+    return [monitor_financial_news, analyze_market_data, create_content, quality_assurance]
+
 # --- Funções específicas para test_train ---
 def create_test_train_agents(configs, tools=None):
     """

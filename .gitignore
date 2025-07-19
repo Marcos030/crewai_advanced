@@ -1,53 +1,151 @@
 # [AI Generated] Data: 19/06/2024
-# Descrição: Arquivo .gitignore para projeto Python CrewAI, incluindo venv, configs, IDEs e arquivos temporários
+# Descrição: Arquivo .gitignore atualizado para projeto Python CrewAI
 # Gerado por: Cursor AI
-# Versão: Python 3.12, crewai 0.75.0, crewai_tools 0.17.0
+# Versão: Python 3.12, crewai 0.141.0, crewai_tools 0.51.1
 # AI_GENERATED_CODE_START
 
 # Ambiente virtual Python
 venv/
+env/
+ENV/
 
 # Arquivos de configuração de ambiente
 .env
 *.env
+.env.local
+.env.production
+.env.development
 
-# Ignorar toda a pasta de configurações
+# Diretórios de configuração (contêm dados sensíveis)
 config/
-outputs/
 
-# Arquivos de cache e temporários
+# Diretórios de saída e resultados
+outputs/
+output/
+results/
+
+# Banco de dados e arquivos de dados
+db/
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# Arquivos de cache Python
 __pycache__/
 *.py[cod]
+*$py.class
 *.pyo
 *.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Arquivos de log
 *.log
-*.sqlite3
-*.db
+logs/
+*.out
+
+# Arquivos temporários
 *.tmp
+*.temp
 *.bak
 *.swp
-.DS_Store
+*.swo
+*~
 
-# Configurações de IDEs
+# Arquivos do sistema
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Configurações de IDEs e editores
 .vscode/
 .idea/
 *.sublime-workspace
 *.sublime-project
+.atom/
+.brackets.json
 
-# Dados de execução e relatórios
-*.out
-*.report
-*.ipynb_checkpoints/
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
 
-# Arquivos de exportação e resultados
+# Arquivos de dados e relatórios
 *.csv
 *.xlsx
 *.xls
 *.parquet
 *.feather
 *.jsonl
+*.json
+*.xml
+*.yaml
+*.yml
 
-# Arquivos de backup
-*~
+# Arquivos de imagem e mídia gerados
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.pdf
+*.html
+
+# Arquivos de treinamento e cache
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+*.model
+
+# Arquivos de configuração local
+config.local.yaml
+config.local.yml
+settings.local.py
+
+# Arquivos de backup e versionamento
+*.orig
+*.rej
+*.orig.*
+*.rej.*
+
+# Arquivos de teste e cobertura
+.coverage
+.pytest_cache/
+.tox/
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Arquivos de Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Arquivos de documentação gerada
+docs/_build/
+site/
 
 # AI_GENERATED_CODE_END 
