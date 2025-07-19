@@ -16,8 +16,6 @@ ENV/
 .env.production
 .env.development
 
-# Diretórios de configuração (contêm dados sensíveis)
-config/
 
 # Diretórios de saída e resultados
 outputs/
